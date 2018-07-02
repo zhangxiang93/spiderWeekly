@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>data spider</title>
+    <link rel="shortcut icon" href="https://p5.ssl.qhimg.com/t01e9f4adb3014c7495.png"/>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div id="wrapper" class="">
+        <div id="hd">
+            <h1 class="logo">
+                数据筛选工具
+            </h1>
+            <ul class="nav">
+                <li>
+                    <a href="javascript:void(0)" class="zhihu active">知乎专栏</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="juejin">掘金</a>
+                </li>
+                <li>
+                    <a href="javascript:alert('还没有开放，敬请期待。。。')" class="">数据中心</a>
+                </li>
+            </ul>
+        </div>
+        <div class="item zh-tpl show">
+            <table class="data-table">
+                <thead>
+                    <th>序号</th>
+                    <th>文章标题</th>
+                    <th>文章作者</th>
+                    <th>文章地址</th>
+                    <th>文章摘要</th>
+                    <th>发布时间</th>
+                    <th>作者主页</th>
+                    <th>点赞人数</th>
+                    <th>评论人数</th>
+                </thead>
+                <tbody>
+                {% for article in arts_zhihu %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ article['title'] }}</td>
+                        <td>{{ article['author'] }}</td>
+                        <td><a href="{{ article['url'] }}" target="_blank">{{ article['url'] }}</a></td>
+                        <td>{{ article['desc'] }}</td>
+                        <td>{{ article['build'] }}</td>
+                        <td><a href="{{ article['author_page'] }}" target="_blank">{{ article['author_page'] }}</a></td>
+                        <td>{{ article['voteup_count'] }}</td>
+                        <td>{{ article['comment_count'] }}</td>
+                    </tr>
+                {% endfor %}  
+                </tbody>
+            </table>
+        </div>
+        <div class="item jj-tpl">
+            <table class="data-table">
+                <thead>
+                    <th>序号</th>
+                    <th>文章标题</th>
+                    <th>文章作者</th>
+                    <th>文章地址</th>
+                    <th>文章摘要</th>
+                    <th>发布时间</th>
+                    <th>收藏人数（人）</th>
+                    <th>点赞人数（人）</th>
+                    <th>关键字</th>
+                    <th>浏览量（次）</th>
+                </thead>
+                <tbody>
+                {% for article in arts_juejin %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ article['title'] }}</td>
+                        <td>{{ article['author'] }}</td>
+                        <td><a href="{{ article['url'] }}" target="_blank">{{ article['url'] }}</a></td>
+                        <td>{{ article['desc'] }}</td>
+                        <td>{{ article['creattime'] }}</td>
+                        <td>{{ article['collect'] }}</td>
+                        <td>{{ article['praise'] }}</td>
+                        <td>{{ article['tags'] }}</td>
+                        <td>{{ article['views'] }}</td>
+                    </tr>
+                {% endfor %}  
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- login -->
+    <script src="http://s0.qhmsg.com/lib/jquery/191.js"></script>
+    <script src="../static/js/index.js"></script>
+</body>
+</html>

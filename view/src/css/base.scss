@@ -1,0 +1,39 @@
+html, body, h1, h2, h3, h4, div, ul, li, p, table, th, td, button, input {
+    margin: 0;
+    padding: 0;
+}
+body {
+    min-width: 1346px!important;
+    font: normal normal 12px/1.6 'Helvetica, Microsoft Yahei, Sans-Serif';
+    background-color: #f5f7fa;
+    box-sizing: border-box;
+}
+h1, h2, h3, h4 {
+    font-family: Helvetica,"Microsoft Yahei", STXihei, "Microsoft Jhenghei", "Microsoft Yahei", Simhei, Sans-Serif;
+}
+h1 {
+    font-size: 20px;
+}
+h2 {
+    font-size: 18px;
+}
+h3 {
+    font-size: 14px;
+}
+
+.page {
+    font-size: 14px;
+
+    .content {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+        .item {
+            width: auto;
+            margin: 10px 0;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+    }
+}
