@@ -20,9 +20,10 @@ crontab -l
 ```
 查看
 ```
-30 2 * * 4 sh /home/zxiangxiang/spiderWeekly/spiderWeekly/spiders/zhihu.sh
-50 2 * * 4 sh /home/zxiangxiang/spiderWeekly/spiderWeekly/spiders/juejin.sh
+30 2 * * 4 sh /home/zxiangxiang/spiderWeekly/spiderWeekly/spiders/*.sh
+50 2 * * 4 sh /home/zxiangxiang/spiderWeekly/spiderWeekly/spiders/*.sh
 ```
+这里挂起两个定时任务。（参数配置可网上查看）
 
 ## web服务启动
 `gunicorn myproject:app`
