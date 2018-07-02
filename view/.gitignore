@@ -1,5 +1,10 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
+# vscode
+.vscode
+sftp.json
+sftp
+
 # dependencies
 /node_modules
 
