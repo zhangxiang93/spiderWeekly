@@ -1,10 +1,10 @@
-# Python + Scrapy
+## Python + Scrapy
 前端技术文章爬取工具
 
-# 数据库
+## 数据库
 MongoDB
 
-# 定时任务
+## 定时任务
 安装`crontab`
 ```
 yum install -y vixie-cron
@@ -24,5 +24,5 @@ crontab -l
 50 2 * * 4 sh /home/zxiangxiang/spiderWeekly/spiderWeekly/spiders/juejin.sh
 ```
 
-# web服务启动
+## web服务启动
 `gunicorn myproject:app`
