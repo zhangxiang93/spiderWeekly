@@ -29,14 +29,13 @@ class MongoPipeline(object):
     def open_spider(self, spider):
         self.client = pymongo.MongoClient(self.mongo_uri)
         self.db = self.client[self.mongo_db]
+        self.db[self.collection_zhihu].remove({})
 
     def close_spider(self, spider):
         self.client.close()
 
     def process_item(self, item, spider):
         if isinstance(item, SearchItem):
-            if self.db[self.collection_zhihu].find().count() >= 1000:
-                self.db[self.collection_zhihu].remove({})
             for data in item.get('data'):
                 build = datetime.fromtimestamp(data.get('updated'), pytz.timezone('Asia/Shanghai')).strftime('%Y-%m-%d %H:%M:%S %Z%z')
                 re_h = re.compile('</?\w+[^>]*')
