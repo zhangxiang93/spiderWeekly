@@ -26,4 +26,9 @@ crontab -l
 这里挂起两个定时任务。（参数配置可网上查看）
 
 ## web服务启动
-`gunicorn myproject:app`
+`gunicorn 入口文件名:app`
+要在入口文件的`app.run()`加上
+```
+from werkzeug.contrib.fixers import ProxyFix
+app.wsgi_app = ProxyFix(app.wsgi_app)
+```

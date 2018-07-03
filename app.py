@@ -28,7 +28,7 @@ def page_load():
         time.sleep(1)
         articles_juejin = db[MONGO_TABLE_JUEJIN].find()
         articles_zhihu = db[MONGO_TABLE_ZHIHU].find()
-        return render_template('index.html', arts_juejin = articles_juejin, arts_zhihu=articles_zhihu)
+        return render_template('index.html', arts_juejin = articles_juejin, arts_zhihu = articles_zhihu)
 
 
 if(__name__) == '__main__':
