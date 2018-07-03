@@ -26,8 +26,8 @@ def page_index():
 def page_load():
     if request.method == 'GET':
         time.sleep(1)
-        articles_juejin = db[MONGO_TABLE_JUEJIN].find()
-        articles_zhihu = db[MONGO_TABLE_ZHIHU].find()
+        articles_juejin = db[MONGO_TABLE_JUEJIN].find().sort("creattime", -1)
+        articles_zhihu = db[MONGO_TABLE_ZHIHU].find().sort("id", -1)
         return render_template('index.html', arts_juejin = articles_juejin, arts_zhihu = articles_zhihu)
 
 
