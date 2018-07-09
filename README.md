@@ -20,10 +20,27 @@ crontab -l
 ```
 查看
 ```
-30 2 * * 4 sh /home/zxiangxiang/spiderWeekly/spiderWeekly/spiders/*.sh
-50 2 * * 4 sh /home/zxiangxiang/spiderWeekly/spiderWeekly/spiders/*.sh
+0 2 * * fri cd /home/*/spiderWeekly/spiderWeekly/spiders && /usr/local/bin/scrapy crawl ***
+0 2 * * fri cd /home/*/spiderWeekly/spiderWeekly/spiders && /usr/local/bin/scrapy crawl ***
 ```
-这里挂起两个定时任务。（参数配置可网上查看）
+这里挂起两个定时任务，上面是定于每周五凌晨2点跑数据。（参数配置可网上查看）
+重启服务
+```
+/sbin/service crond restart
+```
+重载配置
+```
+/sbin/service crond reload
+```
+查看服务状态
+```
+service crond status
+```
+设置`crontab`开机启动
+```
+ntsysv
+```
+进入一个图形控制界面，上下箭头调选项，空格键切换确定取消（*表确定选中），`tab`键切换底部确定取消键
 
 ## web服务启动
 `gunicorn 入口文件名:app`
