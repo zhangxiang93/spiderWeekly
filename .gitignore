@@ -1,12 +1,6 @@
-# See https://help.github.com/ignore-files/ for more about ignoring files.
-
-# vscode
-.vscode/
-__pycache__/
-
-
-# dependencies
-/node_modules
+.vscode
+sftp.json
+__pycache__
 
 # testing
 /coverage
